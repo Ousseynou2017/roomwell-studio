@@ -1,0 +1,7 @@
+# Working files stay out of the repository
+tools/
+reference/
+*-backup.html
+.vercel/
+.DS_Store
+Thumbs.db
