@@ -89,7 +89,9 @@
   /* Hero photo veil: a warm dark veil rising from the bottom, white text (as in the reference) */
   --hero-veil-strong:rgba(22,24,21,.86);
   --hero-veil-soft:rgba(22,24,21,.72);
-  --hero-veil-top:rgba(22,24,21,.7);   /* dark band under the white menu (with the script) */
+  --hero-veil-top:rgba(22,24,21,.7);
+  --hero-veil-strong-m:rgba(22,24,21,.72);   /* phones: lighter veil over the portrait photo, text still >= 4.5:1 */
+  --hero-veil-soft-m:rgba(22,24,21,.58);   /* dark band under the white menu (with the script) */
   --hero-ink:#ffffff;
   --hero-ink-2:rgba(255,255,255,.8);
   --fs-h2:clamp(2rem,3.4vw,2.875rem);
@@ -263,7 +265,7 @@ h1,h2,h3,h4,p,ul{margin:0;}
   .hero__proof{margin-top:16px;}
   .hero__veil{background:
     linear-gradient(180deg,var(--hero-veil-top) 0,var(--hero-veil-top) 72px,rgba(22,24,21,0) 200px),
-    linear-gradient(0deg,var(--hero-veil-strong) 0%,var(--hero-veil-strong) 58%,var(--hero-veil-soft) 72%,rgba(22,24,21,0) 92%);}
+    linear-gradient(0deg,var(--hero-veil-strong-m) 0%,var(--hero-veil-strong-m) 58%,var(--hero-veil-soft-m) 72%,rgba(22,24,21,0) 92%);}
 }
 /* one orchestrated load-in: the hero rises in sequence, nothing else animates on load */
 .hero .rise{opacity:0;transform:translateY(22px);animation:rise 1.1s var(--ease-out) forwards;animation-delay:var(--d,0s);}
@@ -421,10 +423,10 @@ h1,h2,h3,h4,p,ul{margin:0;}
 .faq-panel__inner{min-height:0;overflow:hidden;}
 .faq-panel .body{padding:0 0 28px;max-width:66ch;}
 .faq-q{font-size:1.09rem;}   /* 17.5 px */
-/* from 1024 px: title on the left (sticky under the menu), questions on the right, as in the reference */
+/* from 1024 px: title on the left, still, centred on the questions; questions on the right */
 @media (min-width:1024px){
   .faq-wrap{max-width:var(--maxw);display:grid;grid-template-columns:minmax(0,38fr) minmax(0,62fr);column-gap:clamp(48px,6vw,96px);align-items:start;}
-  .faq-wrap .sh{position:sticky;top:100px;margin:0;text-align:left;}
+  .faq-wrap .sh{align-self:center;margin:0;text-align:left;}
   .faq-wrap .faq-list{margin-top:0;}
 }
 
@@ -530,9 +532,13 @@ h1,h2,h3,h4,p,ul{margin:0;}
 
 <!-- ============================ 2. HERO ============================ -->
 <section class="hero" id="top">
-  <!-- Poster = first frame of the hero video (LCP). Decorative, so the alt is empty. The script adds the video on
-       screens of 768 px and wider, unless reduced motion or Save-Data is on; the video then follows the scroll. -->
-  <img class="hero__img" src="assets/hero-poster-1280.91b9d752.webp" srcset="assets/hero-poster-640.69101afb.webp 640w, assets/hero-poster-960.e66c3d29.webp 960w, assets/hero-poster-1280.91b9d752.webp 1280w" sizes="100vw" width="1280" height="720" alt="" fetchpriority="high" decoding="async">
+  <!-- From 768 px: poster = first frame of the hero video (LCP); the script adds the video after load, unless
+       reduced motion or Save-Data is on. Decorative, so the alt is empty. -->
+  <picture>
+    <!-- Under 768 px: the room photo (Pavel Morillo, Pexels) cropped in portrait, sharp on phones; no video there -->
+    <source media="(max-width:767px)" srcset="assets/hero-mobile-750.c6190e63.webp 750w, assets/hero-mobile-1125.131f9e22.webp 1125w" sizes="100vw" width="750" height="1333">
+    <img class="hero__img" src="assets/hero-poster-1280.91b9d752.webp" srcset="assets/hero-poster-640.69101afb.webp 640w, assets/hero-poster-960.e66c3d29.webp 960w, assets/hero-poster-1280.91b9d752.webp 1280w" sizes="100vw" width="1280" height="720" alt="" fetchpriority="high" decoding="async">
+  </picture>
   <div class="hero__veil" aria-hidden="true"></div>
   <div class="hero__inner">
     <span class="hero__kicker rise" style="--d:.05s"><i aria-hidden="true"></i>Kitchen and bath remodels in Austin</span>
@@ -974,7 +980,7 @@ h1,h2,h3,h4,p,ul{margin:0;}
     v.setAttribute('muted',''); v.setAttribute('playsinline',''); v.setAttribute('autoplay',''); v.setAttribute('aria-hidden','true'); v.tabIndex=-1;
     v.innerHTML='<source src="assets/hero-video.860ddbd3.webm" type="video/webm"><source src="assets/hero-video.39f25104.mp4" type="video/mp4">';
     v.addEventListener('playing',function(){ v.classList.add('is-ready'); },{once:true});
-    heroImg.insertAdjacentElement('afterend',v);
+    (heroImg.closest('picture')||heroImg).insertAdjacentElement('afterend',v);   /* after <picture>, never inside it */
     var p=v.play(); if(p && p.catch) p.catch(function(){});   /* autoplay refused: the poster simply stays */
   }
   if(heroImg && hero && !calm && !saveData && wide){
