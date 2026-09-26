@@ -1,7 +1,7 @@
 # Image credits
 
-Every photo on this page is a free-licence stock photo. None shows a person, a readable brand or an AI-generated scene.
-Each one was checked at full size before use.
+Every photo on this page is a free-licence stock photo, except the four "before" pictures described at the end.
+No photo shows a face or a readable brand. Each one was checked at full size, and zoomed on every label, before use.
 
 Licences:
 - **Unsplash License**: free for commercial and non-commercial use, no permission needed, attribution appreciated. https://unsplash.com/license
@@ -13,8 +13,17 @@ Licences:
 | The Mills mudroom | https://www.pexels.com/photo/white-and-brown-wooden-cabinet-14495937/ | Curtis Adams | Pexels License | 2668×4000 | box (0, 1100, 2668, 2879), then 3:2. Cubbies, hooks and bench | `assets/project-mills-mudroom-480.9d54601f.webp`<br>`assets/project-mills-mudroom-640.226b81a7.webp`<br>`assets/project-mills-mudroom-960.42d376a0.webp`<br>`assets/project-mills-mudroom-1440.f324a9cc.webp` |
 | The Patel bathroom | https://unsplash.com/photos/p9A8tpM93Hk | GoodLifeConstruction | Unsplash License | 7008×4672 | box (0, 1300, 3300, 3500), then 3:2. Double vanity, with the glass shower seen in the mirror; the freestanding tub is left out | `assets/project-patel-bathroom-480.c05e5416.webp`<br>`assets/project-patel-bathroom-640.f24e8056.webp`<br>`assets/project-patel-bathroom-960.023e34b7.webp`<br>`assets/project-patel-bathroom-1440.49ff4bed.webp` |
 | The Chen home | https://unsplash.com/photos/a-large-kitchen-with-a-marble-island-and-white-cabinets-o-uPDNNSsDA | Zac Gudakov | Unsplash License | 6240×4160 | none (already 3:2) | `assets/project-chen-kitchen-480.59c43e6a.webp`<br>`assets/project-chen-kitchen-640.6b5bbdd1.webp`<br>`assets/project-chen-kitchen-960.d4380d82.webp`<br>`assets/project-chen-kitchen-1440.cd8f5f5b.webp` |
+| Hero background | https://www.pexels.com/photo/elegant-japandi-interior-with-pampas-grass-decor-29383010/ | Pavel Morillo | Pexels License | 4416×2944 | none (3:2). Decorative, empty alt | `assets/hero-living-room-640.434eb8de.webp`<br>`assets/hero-living-room-1080.669a41ab.webp`<br>`assets/hero-living-room-1600.acdf466d.webp`<br>`assets/hero-living-room-2400.602987cb.webp` |
+| Step 1, Free call | https://www.pexels.com/photo/white-ceramic-mug-beside-black-book-on-brown-wooden-table-214240/ | Markus Spiske | Pexels License | 5760×3840 | 4:3, leaves out the phone (carrier logo above its screen) | `assets/step-1-free-call-480.9d950d13.webp`<br>`assets/step-1-free-call-640.7e0a841c.webp`<br>`assets/step-1-free-call-960.7c858e9d.webp`<br>`assets/step-1-free-call-1440.59a6f02b.webp` |
+| Step 2, Home visit | https://www.pexels.com/photo/crop-man-measuring-wooden-board-in-room-5691673/ | Ksenia Chernaya | Pexels License | 3800×2537 | 4:3, leaves out the start of the tape (small maker logo) | `assets/step-2-home-visit-480.8f4da3fc.webp`<br>`assets/step-2-home-visit-640.b9b014ed.webp`<br>`assets/step-2-home-visit-960.c75abfa5.webp`<br>`assets/step-2-home-visit-1440.2c64d17d.webp` |
+| Step 3, Fixed price | https://www.pexels.com/photo/white-and-brown-printer-paper-4249590/ | Edward Jenner | Pexels License | 8256×5504 | 4:3, centred on the samples | `assets/step-3-fixed-price-480.b5dd26ac.webp`<br>`assets/step-3-fixed-price-640.c1f5fb6b.webp`<br>`assets/step-3-fixed-price-960.cb3d7427.webp`<br>`assets/step-3-fixed-price-1440.d709edb2.webp` |
+| Step 4, The work | https://www.pexels.com/photo/modern-interior-kitchen-under-renovation-36035073/ | Valentin Ivantsov | Pexels License | 5344×3563 | 4:3, leaves out the window (maker stickers on the frame). Printed boxes under the ladder are unreadable even at full size | `assets/step-4-the-work-480.f7d16d5e.webp`<br>`assets/step-4-the-work-640.e67e9d32.webp`<br>`assets/step-4-the-work-960.00b6eee0.webp`<br>`assets/step-4-the-work-1440.b460496f.webp` |
+| Step 5, Walk-through | https://www.pexels.com/photo/tiles-and-showers-in-a-bathroom-16501255/ | Curtis Adams | Pexels License | 4000×2668 | 4:3, centred on the double shower | `assets/step-5-walk-through-480.95b3b6c7.webp`<br>`assets/step-5-walk-through-640.a7e421af.webp`<br>`assets/step-5-walk-through-960.f8130c07.webp`<br>`assets/step-5-walk-through-1440.683ae9e6.webp` |
+| Book a call background | https://www.pexels.com/photo/modern-white-marble-walk-in-shower-interior-36777898/ | Curtis Adams | Pexels License | 8000×5336 | none (3:2), under a dark veil. Decorative, empty alt | `assets/book-bathroom-640.d8530bf9.webp`<br>`assets/book-bathroom-1080.d73372ab.webp`<br>`assets/book-bathroom-1600.f2b553a6.webp`<br>`assets/book-bathroom-2400.a9b31cdf.webp` |
 | Social preview (og:image) | same photo as The Lewis kitchen | Clay Banks | Unsplash License | 3400×2267 | box (0, 380, 2516, 1701), resized to 1200×630, same fridge retouch | `assets/og-roomwell-1200x630.cc22c503.jpg` |
 
-WebP quality 78, JPG quality 84, metadata removed.
+WebP quality 78, JPG quality 84, metadata removed. The project cards now use the 480, 640 and 960 files; the 1440 files stay for larger screens later.
+
+**"Before" pictures** (`before/project-*-before.webp`): illustrations made for this mock portfolio from each "after" photo, to show what the room could have looked like. They do not show real rooms or real clients.
 
 Font: Instrument Sans by The Instrument Sans Project Authors, SIL Open Font License 1.1 (`assets/fonts/OFL.txt`), latin subset from Google Fonts, self-hosted. The originals and the script that produces these files (`make-images.py`) are kept outside this repository.
