@@ -1,6 +1,6 @@
 # Image credits
 
-Every photo on this page is a free-licence stock photo, except the "before" pictures, the Mills house pictures and the hero video described at the end.
+Every photo on this page is a free-licence stock photo, except the "before" pictures, the Mills house pictures, the hero video and the checklist cover described at the end.
 No photo shows a face or a readable brand. Each one was checked at full size, and zoomed on every label, before use.
 
 Licences:
@@ -19,6 +19,7 @@ Licences:
 | Step 3, Fixed price | https://www.pexels.com/photo/white-and-brown-printer-paper-4249590/ | Edward Jenner | Pexels License | 8256×5504 | 4:3, centred on the samples | `assets/step-3-fixed-price-480.b5dd26ac.webp`<br>`assets/step-3-fixed-price-640.c1f5fb6b.webp`<br>`assets/step-3-fixed-price-960.cb3d7427.webp`<br>`assets/step-3-fixed-price-1440.d709edb2.webp` |
 | Step 4, The work | https://www.pexels.com/photo/modern-interior-kitchen-under-renovation-36035073/ | Valentin Ivantsov | Pexels License | 5344×3563 | 4:3, leaves out the window (maker stickers on the frame). Printed boxes under the ladder are unreadable even at full size | `assets/step-4-the-work-480.f7d16d5e.webp`<br>`assets/step-4-the-work-640.e67e9d32.webp`<br>`assets/step-4-the-work-960.00b6eee0.webp`<br>`assets/step-4-the-work-1440.b460496f.webp` |
 | Step 5, Walk-through | https://www.pexels.com/photo/tiles-and-showers-in-a-bathroom-16501255/ | Curtis Adams | Pexels License | 4000×2668 | 4:3, centred on the double shower | `assets/step-5-walk-through-480.95b3b6c7.webp`<br>`assets/step-5-walk-through-640.a7e421af.webp`<br>`assets/step-5-walk-through-960.f8130c07.webp`<br>`assets/step-5-walk-through-1440.683ae9e6.webp` |
+| Free checklist cover | illustration made for this mock portfolio (see below) | — | — | 1122×1402 | none (4:5). Title checked letter by letter | `assets/guide-cover-640.6c1ee697.webp`<br>`assets/guide-cover-1122.27061e76.webp` |
 | Book a call background | https://www.pexels.com/photo/modern-white-marble-walk-in-shower-interior-36777898/ | Curtis Adams | Pexels License | 8000×5336 | none (3:2), under a dark veil. Decorative, empty alt | `assets/book-bathroom-640.d8530bf9.webp`<br>`assets/book-bathroom-1080.d73372ab.webp`<br>`assets/book-bathroom-1600.f2b553a6.webp`<br>`assets/book-bathroom-2400.a9b31cdf.webp` |
 | Social preview (og:image) | same photo as The Lewis kitchen | Clay Banks | Unsplash License | 3400×2267 | box (0, 380, 2516, 1701), resized to 1200×630, same fridge retouch | `assets/og-roomwell-1200x630.cc22c503.jpg` |
 
@@ -28,6 +29,6 @@ No longer shown on the page, kept in `assets/` so older links keep working: the 
 
 **"Before" pictures** (`before/project-*-before.webp`): illustrations made for this mock portfolio from each "after" photo, to show what the room could have looked like. They do not show real rooms or real clients.
 
-**The Mills house** ("after" and "before", `before/project-mills-house-before.webp`) and **the hero video**: illustrations made for this mock portfolio. They do not show real homes or real clients. A printed logo on a box in the "before" picture was painted out.
+**The Mills house** ("after" and "before", `before/project-mills-house-before.webp`), **the hero video** and **the checklist cover**: illustrations made for this mock portfolio. They do not show real homes or real clients. A printed logo on a box in the "before" picture was painted out.
 
 Font: Instrument Sans by The Instrument Sans Project Authors, SIL Open Font License 1.1 (`assets/fonts/OFL.txt`), latin subset from Google Fonts, self-hosted. The originals and the script that produces these files (`make-images.py`) are kept outside this repository.
