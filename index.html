@@ -84,11 +84,12 @@
   --f-body:'Instrument Sans','Instrument Sans Fallback',-apple-system,'SF Pro Text','Helvetica Neue',Arial,sans-serif;
 
   /* Type scale: bigger, tighter, more air (Apple-style display sizing) */
-  --fs-hero:clamp(2.5rem,5vw,4.75rem);   /* 76px on wide screens, weight 500 */
+  --fs-hero:clamp(2.25rem,3.6vw,3.75rem);   /* 36 to 60px, weight 500 (zoomed out like the reference) */
 
   /* Hero photo veil: a warm dark veil rising from the bottom, white text (as in the reference) */
   --hero-veil-strong:rgba(22,24,21,.86);
   --hero-veil-soft:rgba(22,24,21,.72);
+  --hero-veil-top:rgba(22,24,21,.7);   /* dark band under the white menu (with the script) */
   --hero-ink:#ffffff;
   --hero-ink-2:rgba(255,255,255,.8);
   --fs-h2:clamp(2rem,3.4vw,2.875rem);
@@ -194,7 +195,19 @@ h1,h2,h3,h4,p,ul{margin:0;}
 .menu a{font-size:.9rem;font-weight:500;opacity:.78;transition:opacity .25s;}
 .menu a:hover{opacity:1;}
 .nav__cta{padding:10px 18px;font-size:.88rem;}
-.nav .nav__cta{background:var(--ink);color:#fff;}
+.nav .nav__cta{background:var(--ink);color:#fff;transition:background-color .25s,color .25s,transform .35s var(--ease-out),box-shadow .35s var(--ease-out);}
+/* Over the hero (page at the top, script on): white logo and links, white call button, as in the reference.
+   Without the script the menu never changes state, so it keeps its dark text on the pale top veil. */
+.js .nav:not(.is-solid):not(.is-open){color:#fff;}
+.js .nav:not(.is-solid):not(.is-open) .nav__cta{background:#fff;color:var(--ink);}
+.js .nav:not(.is-solid):not(.is-open) .nav__cta:hover{background:#f2efe8;}
+@media (min-width:861px){
+  /* the four links sit in a pill: glass over the hero, a pale grey outline once the menu turns solid */
+  .menu__list{gap:2px;padding:4px;border-radius:999px;border:1px solid rgba(17,17,17,.12);transition:background-color .25s,border-color .25s;}
+  .menu a{display:block;padding:7px 16px;border-radius:999px;font-size:.875rem;}
+  .js .nav:not(.is-solid) .menu__list{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.25);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}
+  .js .nav:not(.is-solid) .menu a{opacity:.92;}
+}
 .nav.is-solid{background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);box-shadow:0 1px 0 var(--line);color:var(--ink);}
 .nav.is-solid .nav__cta{background:var(--ink);color:#fff;}
 .nav__toggle{display:none;width:44px;height:44px;place-items:center;border-radius:50%;}
@@ -217,12 +230,12 @@ h1,h2,h3,h4,p,ul{margin:0;}
 /* ============================ 2. HERO ============================ */
 /* Full-screen photo, pale veil rising from the bottom, text anchored bottom-left */
 .hero{position:relative;isolation:isolate;min-height:max(640px,100svh);display:flex;flex-direction:column;justify-content:flex-end;
-  padding:108px 0 clamp(32px,4vw,56px);background:var(--dark-warm);color:var(--hero-ink);overflow:hidden;}
+  padding:108px 0 clamp(40px,6vh,72px);background:var(--dark-warm);color:var(--hero-ink);overflow:hidden;}
 .hero__img,.hero__video{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:50% 50%;}
-.hero__video{opacity:0;transition:opacity .3s;pointer-events:none;}
+.hero__video{opacity:0;pointer-events:none;}   /* shown on its first played frame, which is the poster: no jump */
 .hero__video.is-ready{opacity:1;}
 .hero__veil{position:absolute;inset:0;z-index:-1;pointer-events:none;background:
-  linear-gradient(180deg,rgba(247,245,240,.7) 0,rgba(247,245,240,0) 150px),
+  linear-gradient(180deg,var(--hero-veil-top) 0,var(--hero-veil-top) 72px,rgba(22,24,21,0) 220px),
   linear-gradient(0deg,var(--hero-veil-strong) 0%,var(--hero-veil-strong) 35%,var(--hero-veil-soft) 58%,rgba(22,24,21,0) 86%);}
 .hero__inner{width:100%;max-width:1320px;margin-inline:auto;padding-inline:var(--pad);
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,360px);column-gap:clamp(32px,6vw,96px);
@@ -233,12 +246,14 @@ h1,h2,h3,h4,p,ul{margin:0;}
 .hero .h1 span{white-space:nowrap;}
 .hero__rule{grid-area:rule;height:1px;margin:clamp(22px,2.6vw,32px) 0;background:rgba(255,255,255,.28);}
 .hero .btn-row{grid-area:btns;align-self:center;justify-content:flex-start;}
-.hero .lead{grid-area:lead;align-self:end;margin:0;font-size:1rem;line-height:1.55;color:var(--hero-ink-2);}
-.hero__proof{grid-area:proof;align-self:center;font-size:.85rem;color:var(--hero-ink-2);}
-.hero .btn--ghost{padding:13px 24px;}
+.hero .lead{grid-area:lead;align-self:end;margin:0;font-size:.9375rem;line-height:1.55;color:rgba(255,255,255,.72);}   /* second plane: the title leads */
+.hero__proof{grid-area:proof;align-self:center;font-size:.85rem;color:rgba(255,255,255,.6);}
+.hero .btn--lg{font-size:.9375rem;line-height:1.2;min-height:46px;}
+.hero .btn--ghost{padding:12px 22px;}
 .hero .btn--ghost:hover{background:rgba(255,255,255,.1);}
 /* white pill with a round black arrow, as in the reference */
-.btn--white{background:#fff;color:var(--ink);padding:7px 7px 7px 24px;gap:14px;}
+.btn--white{background:#fff;color:var(--ink);padding:8px 8px 8px 22px;gap:12px;}
+.btn--white .btn__dot{width:30px;height:30px;}
 .btn--white:hover{background:#f2efe8;box-shadow:0 14px 30px -10px rgba(0,0,0,.4);}
 .btn--white:hover .btn__dot{transform:translateX(2px);}
 @media (max-width:860px){
@@ -247,11 +262,9 @@ h1,h2,h3,h4,p,ul{margin:0;}
   .hero__rule{margin:22px 0;}
   .hero__proof{margin-top:16px;}
   .hero__veil{background:
-    linear-gradient(180deg,rgba(247,245,240,.7) 0,rgba(247,245,240,0) 130px),
+    linear-gradient(180deg,var(--hero-veil-top) 0,var(--hero-veil-top) 72px,rgba(22,24,21,0) 200px),
     linear-gradient(0deg,var(--hero-veil-strong) 0%,var(--hero-veil-strong) 58%,var(--hero-veil-soft) 72%,rgba(22,24,21,0) 92%);}
 }
-/* slow zoom tied to scroll (set by the script; off with reduced motion or Save-Data) */
-.hero__img{transform:scale(var(--zoom,1));transform-origin:50% 60%;}
 /* one orchestrated load-in: the hero rises in sequence, nothing else animates on load */
 .hero .rise{opacity:0;transform:translateY(22px);animation:rise 1.1s var(--ease-out) forwards;animation-delay:var(--d,0s);}
 @keyframes rise{to{opacity:1;transform:none;}}
@@ -328,7 +341,7 @@ h1,h2,h3,h4,p,ul{margin:0;}
 .cmp__handle:focus-visible .cmp__knob{box-shadow:0 0 0 3px var(--ink),0 0 0 6px #fff;}
 
 /* ============================ 5. HOW IT WORKS: ZIGZAG TIMELINE ============================ */
-/* A centre line fills with gold as you scroll; each step lights up (0.35 -> 1) when the fill reaches its dot.
+/* A centre line fills with gold as you scroll; each step lights up (0.35 -> 1) as its image enters (top at 85 % of the screen).
    Without JS the line is full and every step is lit. Same component as the Northpace page, Roomwell colours. */
 .zig{position:relative;margin-top:clamp(36px,4.5vw,56px);display:flex;flex-direction:column;gap:clamp(40px,5vw,64px);}
 .zig-track{position:absolute;left:50%;top:0;bottom:0;width:2px;transform:translateX(-50%);background:var(--line-strong);border-radius:2px;overflow:hidden;}
@@ -371,7 +384,8 @@ h1,h2,h3,h4,p,ul{margin:0;}
   transition:box-shadow .35s var(--ease-out),border-color .3s;}
 .signup:focus-within{border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,179,126,.22);}
 .signup input{flex:1 1 0;border:0;background:none;outline:none;padding:12px 18px;font-size:.98rem;}
-.signup input+input{border-left:1px solid var(--line);}
+/* divider between email and phone: 1.5 px, 3.7:1 on the white field, 60 % of the field height */
+.signup input+input{background:linear-gradient(#8a847a,#8a847a) left center/1.5px 60% no-repeat;}
 .signup input::placeholder{color:var(--ink-3);}
 .signup .btn{flex:none;}
 .fine{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:.82rem;color:var(--ink-3);}
@@ -406,6 +420,13 @@ h1,h2,h3,h4,p,ul{margin:0;}
 .faq-item.open .faq-panel{grid-template-rows:1fr;}
 .faq-panel__inner{min-height:0;overflow:hidden;}
 .faq-panel .body{padding:0 0 28px;max-width:66ch;}
+.faq-q{font-size:1.09rem;}   /* 17.5 px */
+/* from 1024 px: title on the left (sticky under the menu), questions on the right, as in the reference */
+@media (min-width:1024px){
+  .faq-wrap{max-width:var(--maxw);display:grid;grid-template-columns:minmax(0,38fr) minmax(0,62fr);column-gap:clamp(48px,6vw,96px);align-items:start;}
+  .faq-wrap .sh{position:sticky;top:100px;margin:0;text-align:left;}
+  .faq-wrap .faq-list{margin-top:0;}
+}
 
 /* ============================ 8. BOOK A CALL + FOOTER ============================ */
 /* short dissolve (--blend) so the fade ends above the heading */
@@ -456,13 +477,14 @@ h1,h2,h3,h4,p,ul{margin:0;}
   .btn-row .btn{width:100%;}
   .signup{flex-direction:column;border-radius:var(--r-lg);padding:10px;gap:10px;}
   .signup input{width:100%;text-align:center;}
-  .signup input+input{border-left:0;border-top:1px solid var(--line);}
+  .signup input+input{background:linear-gradient(#8a847a,#8a847a) center top/60% 1.5px no-repeat;}
   .signup .btn{width:100%;}
 }
 
 /* ============================ WITHOUT JAVASCRIPT ============================ */
 /* Everything readable and usable when scripts are off: no hidden reveals, every answer and step shown. */
 .no-js .reveal{opacity:1;transform:none;}
+.no-js{--hero-veil-top:rgba(247,245,240,.7);}   /* no script: the menu stays dark, so the top of the hero stays pale */
 .no-js .car-nav{display:none;}
 .no-js .faq-panel{grid-template-rows:1fr;}
 .no-js .faq-chev{display:none;}   /* every answer is open, so the "+" would mislead */
@@ -735,7 +757,7 @@ h1,h2,h3,h4,p,ul{margin:0;}
 
 <!-- ============================ 7. FAQ ============================ -->
 <section class="section" id="faq">
-  <div class="container container--text">
+  <div class="container container--text faq-wrap">
     <div class="sh reveal">
       <span class="kicker">Your questions</span>
       <h2 class="h2">Questions we get on almost every call</h2>
@@ -919,7 +941,8 @@ h1,h2,h3,h4,p,ul{margin:0;}
     } else probeAll();
   }
 
-  /* ---- How it works: the gold line fills up to 60 % of the screen; a step lights up when the fill reaches its dot ---- */
+  /* ---- How it works: a step lights up as it enters, when the top of its image passes 85 % of the screen height;
+     the gold line fills to the same mark ---- */
   var calm=window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('[data-zig]').forEach(function(zig){
     var fill=zig.querySelector('.zig-fill'), rows=[].slice.call(zig.querySelectorAll('.zrow'));
@@ -927,13 +950,11 @@ h1,h2,h3,h4,p,ul{margin:0;}
     var ticking=false;
     function update(){
       ticking=false;
-      var r=zig.getBoundingClientRect(), anchor=window.innerHeight*0.6;
+      var r=zig.getBoundingClientRect(), anchor=window.innerHeight*0.85;
       var p=Math.max(0,Math.min(1,(anchor-r.top)/r.height));
       fill.style.setProperty('--p',p.toFixed(4));
-      var reach=r.top+p*r.height;
       rows.forEach(function(row){
-        var d=row.querySelector('.step-dot').getBoundingClientRect();
-        row.classList.toggle('on', d.top+d.height/2<=reach+1);
+        row.classList.toggle('on', row.querySelector('.step-img').getBoundingClientRect().top<=anchor);
       });
     }
     function tick(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
@@ -942,34 +963,22 @@ h1,h2,h3,h4,p,ul{margin:0;}
     window.addEventListener('resize',tick);
   });
 
-  /* ---- Hero: the video follows the scroll (currentTime tied to how far the hero has scrolled, via rAF).
-     Only on screens >= 768 px, without reduced motion or Save-Data. Elsewhere the poster stays, with a slow zoom
-     (1 -> 1.08) unless reduced motion or Save-Data is on. ---- */
+  /* ---- Hero video: plays once on every load, then rests on its last frame (no loop).
+     The poster (first frame) stays the LCP: the video is only requested after the load event.
+     Poster only under 768 px, with reduced motion or with Save-Data. ---- */
   var heroImg=document.querySelector('.hero__img'), saveData=navigator.connection && navigator.connection.saveData;
   var wide=window.matchMedia && matchMedia('(min-width:768px)').matches;
-  function heroProgress(){ var h=(hero.offsetHeight||1)*0.75; return Math.max(0,Math.min(1,window.scrollY/h)); }
-  if(heroImg && hero && !calm && !saveData && wide){
+  function startHeroVideo(){
     var v=document.createElement('video');
-    v.className='hero__video'; v.muted=true; v.playsInline=true; v.preload='auto';
-    v.setAttribute('muted',''); v.setAttribute('playsinline',''); v.setAttribute('aria-hidden','true'); v.tabIndex=-1;
-    v.innerHTML='<source src="assets/hero-video.145b2839.webm" type="video/webm"><source src="assets/hero-video.780f5735.mp4" type="video/mp4">';
+    v.className='hero__video'; v.muted=true; v.defaultMuted=true; v.playsInline=true; v.autoplay=true; v.preload='auto';
+    v.setAttribute('muted',''); v.setAttribute('playsinline',''); v.setAttribute('autoplay',''); v.setAttribute('aria-hidden','true'); v.tabIndex=-1;
+    v.innerHTML='<source src="assets/hero-video.860ddbd3.webm" type="video/webm"><source src="assets/hero-video.39f25104.mp4" type="video/mp4">';
+    v.addEventListener('playing',function(){ v.classList.add('is-ready'); },{once:true});
     heroImg.insertAdjacentElement('afterend',v);
-    var vTicking=false;
-    function scrub(){
-      vTicking=false;
-      if(!v.duration) return;
-      var t=heroProgress()*(v.duration-0.05);
-      if(!v.seeking && Math.abs(v.currentTime-t)>0.02) v.currentTime=t;
-    }
-    function vTick(){ if(!vTicking){ vTicking=true; requestAnimationFrame(scrub); } }
-    v.addEventListener('loadeddata',function(){ v.classList.add('is-ready'); scrub(); });
-    v.addEventListener('seeked',vTick);          /* catch up if the page moved during a seek */
-    window.addEventListener('scroll',vTick,{passive:true});
-  } else if(heroImg && hero && !calm && !saveData){
-    var zTicking=false;
-    function zoom(){ zTicking=false; heroImg.style.setProperty('--zoom',(1+0.08*Math.min(1,window.scrollY/(hero.offsetHeight||1))).toFixed(4)); }
-    window.addEventListener('scroll',function(){ if(!zTicking){ zTicking=true; requestAnimationFrame(zoom); } },{passive:true});
-    zoom();
+    var p=v.play(); if(p && p.catch) p.catch(function(){});   /* autoplay refused: the poster simply stays */
+  }
+  if(heroImg && hero && !calm && !saveData && wide){
+    if(document.readyState==='complete') startHeroVideo(); else window.addEventListener('load',startHeroVideo,{once:true});
   }
 
   /* ---- FAQ accordion: one open at a time ---- */
