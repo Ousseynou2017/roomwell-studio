@@ -218,7 +218,9 @@ h1,h2,h3,h4,p,ul{margin:0;}
 /* Full-screen photo, pale veil rising from the bottom, text anchored bottom-left */
 .hero{position:relative;isolation:isolate;min-height:max(640px,100svh);display:flex;flex-direction:column;justify-content:flex-end;
   padding:108px 0 clamp(32px,4vw,56px);background:var(--dark-warm);color:var(--hero-ink);overflow:hidden;}
-.hero__img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:50% 50%;}
+.hero__img,.hero__video{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:50% 50%;}
+.hero__video{opacity:0;transition:opacity .3s;pointer-events:none;}
+.hero__video.is-ready{opacity:1;}
 .hero__veil{position:absolute;inset:0;z-index:-1;pointer-events:none;background:
   linear-gradient(180deg,rgba(247,245,240,.7) 0,rgba(247,245,240,0) 150px),
   linear-gradient(0deg,var(--hero-veil-strong) 0%,var(--hero-veil-strong) 35%,var(--hero-veil-soft) 58%,rgba(22,24,21,0) 86%);}
@@ -244,7 +246,6 @@ h1,h2,h3,h4,p,ul{margin:0;}
   .hero .lead{margin-top:16px;}
   .hero__rule{margin:22px 0;}
   .hero__proof{margin-top:16px;}
-  .hero__img{object-position:30% 50%;}
   .hero__veil{background:
     linear-gradient(180deg,rgba(247,245,240,.7) 0,rgba(247,245,240,0) 130px),
     linear-gradient(0deg,var(--hero-veil-strong) 0%,var(--hero-veil-strong) 58%,var(--hero-veil-soft) 72%,rgba(22,24,21,0) 92%);}
@@ -521,14 +522,15 @@ h1,h2,h3,h4,p,ul{margin:0;}
 
 <!-- ============================ 2. HERO ============================ -->
 <section class="hero" id="top">
-  <!-- Photo: Pavel Morillo, Pexels (see IMAGES.md). Decorative, so the alt is empty. -->
-  <img class="hero__img" src="assets/hero-living-room-1600.acdf466d.webp" srcset="assets/hero-living-room-640.434eb8de.webp 640w, assets/hero-living-room-1080.669a41ab.webp 1080w, assets/hero-living-room-1600.acdf466d.webp 1600w, assets/hero-living-room-2400.602987cb.webp 2400w" sizes="100vw" width="2400" height="1600" alt="" fetchpriority="high" decoding="async">
+  <!-- Poster = first frame of the hero video (LCP). Decorative, so the alt is empty. The script adds the video on
+       screens of 768 px and wider, unless reduced motion or Save-Data is on; the video then follows the scroll. -->
+  <img class="hero__img" src="assets/hero-poster-1280.91b9d752.webp" srcset="assets/hero-poster-640.69101afb.webp 640w, assets/hero-poster-960.e66c3d29.webp 960w, assets/hero-poster-1280.91b9d752.webp 1280w" sizes="100vw" width="1280" height="720" alt="" fetchpriority="high" decoding="async">
   <div class="hero__veil" aria-hidden="true"></div>
   <div class="hero__inner">
     <span class="hero__kicker rise" style="--d:.05s"><i aria-hidden="true"></i>Kitchen and bath remodels in Austin</span>
     <!-- LCP element. Keep it visible on load. -->
     <h1 class="h1 rise" style="--d:.15s"><span>Love Your Home</span> Again.</h1>
-    <p class="lead rise" style="--d:.28s">Tired of a kitchen that fights you every morning? We plan it, price it in writing and build it, one room at a time.</p>
+    <p class="lead rise" style="--d:.28s">Tired of a kitchen that fights you every morning? We plan the room with you and give you a fixed price in writing.</p>
     <span class="hero__rule rise" style="--d:.22s" aria-hidden="true"></span>
     <!-- Pick your goal: keep both buttons, or delete one. -->
     <div class="btn-row rise" style="--d:.4s">
@@ -626,8 +628,8 @@ h1,h2,h3,h4,p,ul{margin:0;}
         <div class="rcard__foot"><b>The Lewis kitchen</b><span>Kitchen · 8 weeks</span></div>
       </article>
       <article class="rcard">
-        <figure class="rcard__img" data-before="before/project-mills-mudroom-before.webp"><img src="assets/project-mills-mudroom-960.42d376a0.webp" srcset="assets/project-mills-mudroom-480.9d54601f.webp 480w, assets/project-mills-mudroom-640.226b81a7.webp 640w, assets/project-mills-mudroom-960.42d376a0.webp 960w" sizes="(max-width:760px) 80vw, 420px" width="1440" height="960" alt="Built-in mudroom bench with cubbies and coat hooks, after the work" loading="lazy" decoding="async"></figure>
-        <div class="rcard__foot"><b>The Mills mudroom</b><span>Mudroom · 3 weeks</span></div>
+        <figure class="rcard__img" data-before="before/project-mills-house-before.webp"><img src="assets/project-mills-house-960.930d92f0.webp" srcset="assets/project-mills-house-480.f267b548.webp 480w, assets/project-mills-house-640.1656eb0a.webp 640w, assets/project-mills-house-960.930d92f0.webp 960w" sizes="(max-width:760px) 80vw, 420px" width="1440" height="1080" alt="Single-story house with a new metal roof and wood porch posts, after the work" loading="lazy" decoding="async"></figure>
+        <div class="rcard__foot"><b>The Mills house</b><span>Exterior refresh · 6 weeks</span></div>
       </article>
       <article class="rcard">
         <figure class="rcard__img" data-before="before/project-patel-bathroom-before.webp"><img src="assets/project-patel-bathroom-960.023e34b7.webp" srcset="assets/project-patel-bathroom-480.c05e5416.webp 480w, assets/project-patel-bathroom-640.f24e8056.webp 640w, assets/project-patel-bathroom-960.023e34b7.webp 960w" sizes="(max-width:760px) 80vw, 420px" width="1440" height="960" alt="Double vanity with two sinks, with a glass shower reflected in the mirror, after the work" loading="lazy" decoding="async"></figure>
@@ -962,11 +964,32 @@ h1,h2,h3,h4,p,ul{margin:0;}
     window.addEventListener('resize',tick);
   });
 
-  /* ---- Hero: slow zoom (1 -> 1.08) tied to scroll through the hero. Off with reduced motion or Save-Data. ---- */
+  /* ---- Hero: the video follows the scroll (currentTime tied to how far the hero has scrolled, via rAF).
+     Only on screens >= 768 px, without reduced motion or Save-Data. Elsewhere the poster stays, with a slow zoom
+     (1 -> 1.08) unless reduced motion or Save-Data is on. ---- */
   var heroImg=document.querySelector('.hero__img'), saveData=navigator.connection && navigator.connection.saveData;
-  if(heroImg && hero && !calm && !saveData){
+  var wide=window.matchMedia && matchMedia('(min-width:768px)').matches;
+  function heroProgress(){ var h=(hero.offsetHeight||1)*0.75; return Math.max(0,Math.min(1,window.scrollY/h)); }
+  if(heroImg && hero && !calm && !saveData && wide){
+    var v=document.createElement('video');
+    v.className='hero__video'; v.muted=true; v.playsInline=true; v.preload='auto';
+    v.setAttribute('muted',''); v.setAttribute('playsinline',''); v.setAttribute('aria-hidden','true'); v.tabIndex=-1;
+    v.innerHTML='<source src="assets/hero-video.145b2839.webm" type="video/webm"><source src="assets/hero-video.780f5735.mp4" type="video/mp4">';
+    heroImg.insertAdjacentElement('afterend',v);
+    var vTicking=false;
+    function scrub(){
+      vTicking=false;
+      if(!v.duration) return;
+      var t=heroProgress()*(v.duration-0.05);
+      if(!v.seeking && Math.abs(v.currentTime-t)>0.02) v.currentTime=t;
+    }
+    function vTick(){ if(!vTicking){ vTicking=true; requestAnimationFrame(scrub); } }
+    v.addEventListener('loadeddata',function(){ v.classList.add('is-ready'); scrub(); });
+    v.addEventListener('seeked',vTick);          /* catch up if the page moved during a seek */
+    window.addEventListener('scroll',vTick,{passive:true});
+  } else if(heroImg && hero && !calm && !saveData){
     var zTicking=false;
-    function zoom(){ zTicking=false; var h=hero.offsetHeight||1, p=Math.max(0,Math.min(1,window.scrollY/h)); heroImg.style.setProperty('--zoom',(1+0.08*p).toFixed(4)); }
+    function zoom(){ zTicking=false; heroImg.style.setProperty('--zoom',(1+0.08*Math.min(1,window.scrollY/(hero.offsetHeight||1))).toFixed(4)); }
     window.addEventListener('scroll',function(){ if(!zTicking){ zTicking=true; requestAnimationFrame(zoom); } },{passive:true});
     zoom();
   }

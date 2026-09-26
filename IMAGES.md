@@ -1,6 +1,6 @@
 # Image credits
 
-Every photo on this page is a free-licence stock photo, except the four "before" pictures described at the end.
+Every photo on this page is a free-licence stock photo, except the "before" pictures, the Mills house pictures and the hero video described at the end.
 No photo shows a face or a readable brand. Each one was checked at full size, and zoomed on every label, before use.
 
 Licences:
@@ -10,10 +10,10 @@ Licences:
 | Card | Source | Author | Licence | Original | Crop | Files |
 |---|---|---|---|---|---|---|
 | The Lewis kitchen | https://unsplash.com/photos/modern-kitchen-with-island-and-stainless-steel-appliances-J77Yzq9_Hcg | Clay Banks | Unsplash License | 3400×2267 | box (0, 500, 2516, 2177), then 3:2. Leaves out the range, which carries a small brand badge. The brand logo on the fridge door (x 463 to 502, y 750 to 773 on the original) is covered with the steel just below it | `assets/project-lewis-kitchen-480.428826d1.webp`<br>`assets/project-lewis-kitchen-640.08553132.webp`<br>`assets/project-lewis-kitchen-960.ea7d73d7.webp`<br>`assets/project-lewis-kitchen-1440.11b4540b.webp` |
-| The Mills mudroom | https://www.pexels.com/photo/white-and-brown-wooden-cabinet-14495937/ | Curtis Adams | Pexels License | 2668×4000 | box (0, 1100, 2668, 2879), then 3:2. Cubbies, hooks and bench | `assets/project-mills-mudroom-480.9d54601f.webp`<br>`assets/project-mills-mudroom-640.226b81a7.webp`<br>`assets/project-mills-mudroom-960.42d376a0.webp`<br>`assets/project-mills-mudroom-1440.f324a9cc.webp` |
+| The Mills house | illustration made for this mock portfolio (see below) | — | — | 2752×1536 | box (352, 0, 2400, 1536), 4:3. Front of a single-story house after the work | `assets/project-mills-house-480.f267b548.webp`<br>`assets/project-mills-house-640.1656eb0a.webp`<br>`assets/project-mills-house-960.930d92f0.webp`<br>`assets/project-mills-house-1440.70873b03.webp` |
 | The Patel bathroom | https://unsplash.com/photos/p9A8tpM93Hk | GoodLifeConstruction | Unsplash License | 7008×4672 | box (0, 1300, 3300, 3500), then 3:2. Double vanity, with the glass shower seen in the mirror; the freestanding tub is left out | `assets/project-patel-bathroom-480.c05e5416.webp`<br>`assets/project-patel-bathroom-640.f24e8056.webp`<br>`assets/project-patel-bathroom-960.023e34b7.webp`<br>`assets/project-patel-bathroom-1440.49ff4bed.webp` |
 | The Chen home | https://unsplash.com/photos/a-large-kitchen-with-a-marble-island-and-white-cabinets-o-uPDNNSsDA | Zac Gudakov | Unsplash License | 6240×4160 | none (already 3:2) | `assets/project-chen-kitchen-480.59c43e6a.webp`<br>`assets/project-chen-kitchen-640.6b5bbdd1.webp`<br>`assets/project-chen-kitchen-960.d4380d82.webp`<br>`assets/project-chen-kitchen-1440.cd8f5f5b.webp` |
-| Hero background | https://www.pexels.com/photo/elegant-japandi-interior-with-pampas-grass-decor-29383010/ | Pavel Morillo | Pexels License | 4416×2944 | none (3:2). Decorative, empty alt | `assets/hero-living-room-640.434eb8de.webp`<br>`assets/hero-living-room-1080.669a41ab.webp`<br>`assets/hero-living-room-1600.acdf466d.webp`<br>`assets/hero-living-room-2400.602987cb.webp` |
+| Hero video and poster | illustration made for this mock portfolio (see below) | — | — | 1280×720, 8 s | none (16:9). Sound removed, keyframe every 12 frames so it can follow the scroll. The poster is its first frame. Decorative, empty alt | `assets/hero-poster-640.69101afb.webp`<br>`assets/hero-poster-960.e66c3d29.webp`<br>`assets/hero-poster-1280.91b9d752.webp`<br>`assets/hero-video.780f5735.mp4`<br>`assets/hero-video.145b2839.webm` |
 | Step 1, Free call | https://www.pexels.com/photo/white-ceramic-mug-beside-black-book-on-brown-wooden-table-214240/ | Markus Spiske | Pexels License | 5760×3840 | 4:3, leaves out the phone (carrier logo above its screen) | `assets/step-1-free-call-480.9d950d13.webp`<br>`assets/step-1-free-call-640.7e0a841c.webp`<br>`assets/step-1-free-call-960.7c858e9d.webp`<br>`assets/step-1-free-call-1440.59a6f02b.webp` |
 | Step 2, Home visit | https://www.pexels.com/photo/crop-man-measuring-wooden-board-in-room-5691673/ | Ksenia Chernaya | Pexels License | 3800×2537 | 4:3, leaves out the start of the tape (small maker logo) | `assets/step-2-home-visit-480.8f4da3fc.webp`<br>`assets/step-2-home-visit-640.b9b014ed.webp`<br>`assets/step-2-home-visit-960.c75abfa5.webp`<br>`assets/step-2-home-visit-1440.2c64d17d.webp` |
 | Step 3, Fixed price | https://www.pexels.com/photo/white-and-brown-printer-paper-4249590/ | Edward Jenner | Pexels License | 8256×5504 | 4:3, centred on the samples | `assets/step-3-fixed-price-480.b5dd26ac.webp`<br>`assets/step-3-fixed-price-640.c1f5fb6b.webp`<br>`assets/step-3-fixed-price-960.cb3d7427.webp`<br>`assets/step-3-fixed-price-1440.d709edb2.webp` |
@@ -24,6 +24,10 @@ Licences:
 
 WebP quality 78, JPG quality 84, metadata removed. The project cards now use the 480, 640 and 960 files; the 1440 files stay for larger screens later.
 
+No longer shown on the page, kept in `assets/` so older links keep working: the Mills mudroom photo (Curtis Adams, Pexels, https://www.pexels.com/photo/white-and-brown-wooden-cabinet-14495937/, `assets/project-mills-mudroom-*.webp`, `before/project-mills-mudroom-before.webp`) and the former hero photo (Pavel Morillo, Pexels, https://www.pexels.com/photo/elegant-japandi-interior-with-pampas-grass-decor-29383010/, `assets/hero-living-room-*.webp`).
+
 **"Before" pictures** (`before/project-*-before.webp`): illustrations made for this mock portfolio from each "after" photo, to show what the room could have looked like. They do not show real rooms or real clients.
+
+**The Mills house** ("after" and "before", `before/project-mills-house-before.webp`) and **the hero video**: illustrations made for this mock portfolio. They do not show real homes or real clients. A printed logo on a box in the "before" picture was painted out.
 
 Font: Instrument Sans by The Instrument Sans Project Authors, SIL Open Font License 1.1 (`assets/fonts/OFL.txt`), latin subset from Google Fonts, self-hosted. The originals and the script that produces these files (`make-images.py`) are kept outside this repository.
